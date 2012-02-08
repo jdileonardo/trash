@@ -1,0 +1,80 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf320
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fnil\fcharset0 Monaco;\f2\froman\fcharset0 TimesNewRomanPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red63\green127\blue95;}
+\margl1440\margr1440\vieww11840\viewh15120\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 README\
+======\
+General Problem:\
+----------------------------\
+\
+The LibrarySearch class is used to organize and manage Reference (book and journal) records made up of 
+\f1\fs22 Call Number, Title, Author(Book) or Organization(Journal),Publisher(Book), and Year.\
+\
+Assumptions/Limitations\
+---------------------------\
+ - It is assumed that the user is entering databases containing the call number, title, and year, at a minimum.\
+\
+- If the User tries to enter more than one record with the same call number and year, the program will report a warning, and not store the record.\
+\
+\
+How to build/test\
+-----------------\
+-Import into Eclipse\
+-Run while specifying the two filenames in the command line(e.g 
+\f2\fs24 java LibrarySearch <input> <output>)
+\f1\fs22 \
+-Follow Onscreen prompts\
+\
+Sample Test Cases:\
+------------\
+Copy and paste the below just below the Main of the LibrarySearch\
+\pard\pardeftab720\ql\qnatural
+\cf2 JournalDB.add(new Journal("Q21","Java for Dummies", "Arthur Corp", "4500"));\cf0 \
+\cf2 JournalDB.add(new Journal("Q55.66","Learn the Java", "Bert Corp","5000"));\cf0 \
+\cf2 JournalDB.add(new Journal("Q66.44", "Hungry Hippo", "Charlie Corp", "4000"));\cf0 \
+\cf2 BookDB.add(new Book("Q12", "Fei Song","Netbeans 101","Song Inc","9123"));\cf0 \
+\cf2 BookDB.add(new Book("Q13", "Julian D","Do the Java","JD Corp","4444"));\cf0 \
+\cf2 BookDB.add(new Book("Q14", "Tao Xu","Mark Java","Xu Inc","7777"));\
+\
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+\cf0 A) Regular Test\
+
+\f2\fs24 Expected Result: Should be fully functional and Searchable\
+\
+B) Duplicate Test\
+Add:
+\f1\fs22 \cf2 "Q14", "Tao Xu","Mark Java","Xu Inc","7777"  as a Book
+\f2\fs24 \cf0 \
+\
+Expected Result: Upon Adding the record, user should be prompted of duplication\
+\
+C)Common Keyword Test\
+\
+Search:  
+\f1\fs22 \cf2 "Java" as a book title.
+\f2\fs24 \cf0 \
+\
+Expected Result: Records 5 and 6(or 2 and 3 of the book) Should display.\
+
+\f0 \
+D)Blank Search\
+Expected Result: ALL entries for selected Database should print\
+\
+E)Year Mod's\
+Search: 4000-5000, 4600- , and -4400 for journal\
+\
+1:All 3 Journals\
+2:2nd Journal\
+3:1st Journal\
+
+\f1\fs22 \
+Potential Improvements\
+----------------------\
+-HashMapHandeler may have been simplified into one run through the ReferenceDB.\
+\
+\
+}
