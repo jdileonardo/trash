@@ -1,6 +1,6 @@
 <?php
-$feed = simplexml_load_file('http://common.mdev.desire2learn.com/test/BumpFLStayRSS2.xml');
-$con = mysql_connect("localhost:3306","root","password");
+$feed = simplexml_load_file('URLEHERE');
+$con = mysql_connect(","","");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
@@ -13,7 +13,7 @@ foreach($feed->channel->item as $item)
 	$link = $item->link;
 	
 	//Namespaces
-	$d2lmeta = $item->children('http://desire2learn.com/rss/d2lmeta/');
+	$d2lmeta = $item->children('');
 	
   	$telephone = $d2lmeta->telephone;
  	$addr1 = $d2lmeta->addr1;
